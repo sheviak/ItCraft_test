@@ -1,0 +1,12 @@
+<div>
+  <div class="topnav">
+    <a [routerLink]="['']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a [routerLink]="['/users']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }" *ngIf='isLoggedIn'>Users</a>
+
+    <a [routerLink]="['/login']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }" *ngIf='!isLoggedIn'>Login</a>
+    <a [routerLink]="['/registration']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }" *ngIf='!isLoggedIn'>Registration</a>
+    <a *ngIf='isLoggedIn' routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }" (click)='logout()'>Logout</a>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

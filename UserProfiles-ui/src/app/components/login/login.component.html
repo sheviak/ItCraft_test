@@ -1,0 +1,13 @@
+<form [formGroup]="form" novalidate (ngSubmit)="submit()">
+    <mat-card>
+        <mat-form-field class="example-form-filed">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="user@gmail.com" id="email" name="email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="example-form-filed">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput id="password" name="password" formControlName="password">
+        </mat-form-field>
+        <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">OK</button>
+    </mat-card>
+</form>
